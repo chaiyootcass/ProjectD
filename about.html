@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Book bus</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scal = 1">
+
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> -->
+	<link rel="stylesheet" type="text/css" href="login.css">
+	<link rel="stylesheet" type="text/css" href="footer.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="javas.js"></script>
+	<style type="text/css">
+		body {
+			background-image: url(nbg.jpg);
+			background-size: cover;
+			/* <------ */
+			background-repeat: no-repeat;
+			background-position: center center;
+		}
+	</style>
+
+
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+</head>
+
+<body>
+	<div style="background-image:url(nbg.jpg); margin-top: -40px; position:fixed; min-height: 100%; min-width: 100%; max-height: 100%;
+	max-width: 100%; background-repeat: no-repeat;background-size: cover; z-index: -1;"></div>
+	<div style="background-color: rgba(33, 68, 33,0.5); margin-top: -40px; position:fixed; min-height: 100%; min-width: 100%; max-height: 100%;	max-width: 100%; background-repeat: no-repeat;background-size: cover; z-index: -1;"></div>
+	<nav class="navbar navbar-inverse navbar-fixed-top" style="padding-left: 50px; padding-right: 50px; background-color: #0c1a1e">
+		<div class="container-fluid">
+
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" style="color:#e82c2c; font-size: 35px;" href="index.php">MyBus</a>
+			</div>
+
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li class="active">
+						<a href="#">book your ride!!</a>
+					</li>
+					<!-- <li><a href="#">Page 1</a></li> -->
+				</ul>
+				<ul class="nav navbar-nav">
+					<li>
+						<a href="about.php">About us</a>
+					</li>
+					<!-- <li><a href="#">Page 1</a></li> -->
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+
+					<li>
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+							<span class="glyphicon glyphicon-user"></span>
+							<?php echo $_SESSION["user_name"]; ?> </a>
+						<ul class="dropdown-menu">
+							<li>
+								<a href="profile.php">Your profile</a>
+							</li>
+							<li>
+								<a href="showticket.php">Your tickets</a>
+							</li>
+							<li>
+								<a href="index.php" onclick="logout()">Logout</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+
+			</div>
+		</div>
+	</nav>
+
+
+	<script src="js/bootstrap.min.js" type="text/css"></script>
+</body>
+
+</html>
