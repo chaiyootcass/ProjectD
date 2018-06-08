@@ -12,17 +12,17 @@ include 'includes/nav_bar.php';
 
 <form name="form1" style="padding-left: 25%;" action="user.php" method="POST" onsubmit="return required()">
     <div class="form-group">
-        <label >Username id :</label>
+        <label >Username :</label>
         <br>
-        <input type="text" class="form-control " name="username" style=" width: 70%;" id="username" placeholder="User id" >
+        <input type="text" class="form-control" name="username" style="width: 70%;" id="username" placeholder="Enter User id or User name or Email" >
     </div>
     <button type="submit" name="submit" class="btn btn-primary">Submit</button>
 </form>
 <?php
 include 'includes/conn.php';
-if (isset($_POST['submit'])) {
-    $id = $_POST['username'];
-    $query = "SELECT * FROM user WHERE user_name=$id OR user_id=$id OR email_id=$id";
+if (isset($_POST["submit"])) {
+    $id = $_POST["username"];
+    $query = "SELECT * FROM user WHERE email_id='$id' OR user_name='$id' OR user_id='$id'";
     $res = mysqli_query($connection, $query);
     if (!$res || mysqli_num_rows($res) == 0) {
         echo "<h1 style=\"color:red;\" >No result found</h1>";
