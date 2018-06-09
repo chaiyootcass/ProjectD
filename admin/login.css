@@ -1,6 +1,6 @@
 @import "bourbon";
 body {
-	background: #eee !important;
+	background:url(../admin/img/bg1.jpg)no-repeat center center fixed; 
 }
 
 .wrapper {
