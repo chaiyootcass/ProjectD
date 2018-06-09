@@ -12,7 +12,7 @@ $msg_error = "";
 echo "$msg_error";
 ?>
     <form class="form-signin" action="index.php" method="POST">
-    	<h2 class="form-signin-heading">login</h2>
+    	<h2 class="form-signin-heading"><center><b>LOGIN</b></center></h2>
     	<input type="text" class="form-control" name="username" placeholder="Email Address" required="" autofocus="" />
     	<input type="password" class="form-control" name="password" placeholder="Password" required=""/>
     	<label class="checkbox">
