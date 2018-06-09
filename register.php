@@ -10,7 +10,7 @@ include 'includes/conn.php';
 //$_SESSION["islogin"]=0;
 
 ?>
-	<div class="container" style="margin-top: 70px; margin-bottom: 40px;">
+	<div class="container" style="margin-top: 70px; margin-bottom: 40px; background-color: rgba(255, 255, 255, 0.479); max-width: 650px; padding: 15px 15px 25px;">
 		<?php
 if (isset($_POST["submit"])) {
 /////////////////////////////
