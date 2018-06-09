@@ -32,6 +32,20 @@ include 'includes/conn.php';
 <div class="container" style="margin-top: 70px; margin-bottom: 40px">
 <h2>Successfully charged !</h1><br>
 <?php
+$fare = $_SESSION['totalfare'];
+$bus_id = $_SESSION["bus_id"];
+$date = $_SESSION["date"];
+$user_id = $_SESSION["user_id"];
+$source = $_SESSION["source"];
+$destination = $_SESSION["destination"];
+$time = date("Y-m-d h:i:sa") . " GMT";
+$number = $_SESSION["number"];
+$query = "INSERT INTO `ticket` (`ticket_id`, `user_id`, `bus_id`, `source`, `destination`, `price`, `time_of_booking`, `no_of_passenger`,`date_of_journey`) VALUES (NULL, '" . $user_id . "', '" . $bus_id . "', '" . $source . "', '" . $destination . "', '" . $fare . "', '" . $time . "', '" . $number . "','$date')";
+$query1 = "UPDATE  seats
+          SET     available_seats	 = GREATEST(0, available_seats - $number)
+          WHERE   bus_id = $bus_id and date1 = '$date'";
+$result = mysqli_query($connection, $query);
+$result1 = mysqli_query($connection, $query1);
 $sql = "SELECT * FROM `ticket` WHERE ticket_id=(SELECT MAX(ticket_id) FROM `ticket`)";
 $query = mysqli_query($connection, $sql);
 while ($row = mysqli_fetch_assoc($query)) {
