@@ -32,12 +32,21 @@ if (($_SESSION["islogin"] == 1) && $_POST && isset($_POST['number'])) {
     $result1 = mysqli_query($connection, $query1);*/
     if ($ticket_id == 1) {
         ?>
-        <h1>Your Ticket:</h1>
-        <div class="container col-md-6" style="border:solid black 2px; border-radius: 8px;margin: 10px; padding:10px;">
-		<h1>Your Ticket <br> From <b><?php echo $_SESSION["source"]; ?></b> <br>To <b><?php echo $_SESSION["destination"]; ?></b>     <br>Fare = <b><?php echo $_SESSION["fare"]; ?></b> per person
-			<br>Arrival time <b><?php echo $_SESSION["arrival_time"]; ?></b>
-			<br>Destination time <b><?php echo $_SESSION["destination_time"]; ?></b>
-			<br> <span>Total fare: <b><?php echo $fare; ?></b></span> </h1>
+        <div class="container col-md-6" style="background : rgba(117, 177, 169, 0.824); border:solid black 2px; border-radius: 8px;margin: 10px; padding:10px;">
+        <h1 style = "font-size: 35px;"><b>CONFIRMATION TICKET</b> </h1>
+        <h1 style = "font-size: 15px;"><b>*Please check your ticket </b> </h1>
+    </div>
+        <div class="container col-md-6" style="background : rgba(117, 177, 169, 0.824); border:solid black 2px; border-radius: 8px;margin: 10px; padding:10px;">
+        <h1 style = "font-size: 35px;">
+        <b>TICKET</b></h1>
+        <h1 style = "font-size: 25px;">
+        <b>From : </b><?php echo $_SESSION["source"]; ?></b> 
+        <br><b>To :</b><?php echo $_SESSION["destination"]; ?>     
+        <br><b>Price : </b><?php echo $_SESSION["fare"]; ?><b> per person </b>
+        <br><b>Number Passenger : </b><?php echo $_SESSION["number"]; ?>
+			<br><b>Arrival Time : </b><?php echo $_SESSION["arrival_time"]; ?>
+			<br><b>Destination Time: </b><?php echo $_SESSION["destination_time"]; ?>
+			<br> <span><b>Total Price : </b><?php echo $fare; ?></span> </h1>
 		</div>
 		<?php
 require_once './config.php';

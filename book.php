@@ -73,12 +73,17 @@ if (($_SESSION["islogin"] == 1)) {
 
     ?>
 
-		<div class="container col-md-6" style="border:solid black 2px; border-radius: 8px;margin: 10px; padding:10px;">
-		<h1>Your Ticket <br> from <b><?php echo $_SESSION["source"]; ?></b> <br>to <b><?php echo $_SESSION["destination"]; ?></b>     <br>fare = <b><?php echo $fare; ?></b> per person
-			<br>arrival time <b><?php echo $arrival_time; ?></b>
-			<br>destination time <b><?php echo $destination_time; ?></b></h1>
-		</div>
-		<div class="container col-md-5" style="border:solid black 2px; border-radius: 8px; margin:10px; padding:10px;">
+		<div class="container col-md-6" style="background : rgba(117, 177, 169, 0.824); border:solid black 2px; border-radius: 8px;margin: 10px; padding:10px;">
+        <h1 style = "font-size: 35px;"><b>TICKET</b> </h1>
+        <h1 style = "font-size: 25px;">
+            <b>From : </b> <?php echo $_SESSION["source"]; ?> 
+            <br><b>To : </b><?php echo $_SESSION["destination"]; ?>    
+            <br><b>Price : </b><?php echo $fare; ?><b> per person </b>
+			<br><b>Arrival Time : </b><?php echo $arrival_time; ?>
+			<br><b>Destination Time : </b><?php echo $destination_time; ?></h1>
+        
+        </div>
+		<div class="container col-md-5" style=" background : rgba(117, 177, 169, 0.824);border:solid black 2px; border-radius: 8px; margin:10px; padding:10px;">
 
 		<?php
 //$query = "SELECT available_seats FROM bus WHERE   bus_id = $bus_id";
@@ -94,10 +99,10 @@ if (($_SESSION["islogin"] == 1)) {
     ?>
 
 		<form action="booked.php" method="POST" style="display: inline-block;">
-		<h3 style="display: inline-block;">Number of passengers :</h3>
+		<h3 style="display: inline-block;"><b>Number of Passengers :</b></h3>
 		    <input name="number" style="width: 60px;" data-bind="value: qty()" value="1" type="number" max="<?php echo $max_seat; ?>" min="1"  maxlength="6"/>
 		    <br>
-		    <button  class="btn btn-lg btn-primary " name="submit" value="submit" >go</button>
+		    <button  class="btn btn-lg btn-primary " name="submit" value="submit" ><b>ENTER</b></button>
 		</form>
 		<?php
 } else {

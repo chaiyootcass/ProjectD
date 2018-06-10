@@ -7,16 +7,16 @@
 		            <span class="icon-bar"></span>
 		            <span class="icon-bar"></span>
 		        </button>
-		    	<a class="navbar-brand" style="color:#e82c2c; font-size: 35px;" href="index.php">MyBus</a>
+		    	<a class="navbar-brand" style="color:#e82c2c; font-size: 35px;" href="index.php"> <b> BOOKINGAIR </b></a>
 		    </div>
 
 		    <div class="collapse navbar-collapse" id="myNavbar">
 			    <ul class="nav navbar-nav">
-			    	<li class="active"><a href="#">book your ride!!</a></li>
+			    	<li class="active"><a href="#"><b> BOOKING </b></a></li>
 			    	<!-- <li><a href="#">Page 1</a></li> -->
 			    </ul>
 			    <ul class="nav navbar-nav">
-			    	<li ><a href="about.php">About us</a></li>
+			    	<li ><a href="about.php"><b> ABOUT </b></a></li>
 			    	<!-- <li><a href="#">Page 1</a></li> -->
 			    </ul>
 			    <ul class="nav navbar-nav navbar-right">
@@ -28,9 +28,9 @@ if ($_SESSION["islogin"] == 0) {
     echo $str;
 } else {?>
 
-						<li><a href="profile.php">Your profile</a></li>
-				        <li><a href="showticket.php">Your tickets</a></li>
-				        <li><a href="index.php" onclick="logout()">Logout</a></li>
+						<li><a href="profile.php"><b> PROFILE </b></a></li>
+				        <li><a href="showticket.php"><b> MY TICKETS </b></a></li>
+				        <li><a href="index.php" onclick="logout()"> <b> LOGOUT </b></a></li>
 			    	<?php
 }
 ?>

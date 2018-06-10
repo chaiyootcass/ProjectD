@@ -29,8 +29,8 @@ include 'includes/conn.php';
 ?>
 
 
-<div class="container" style="margin-top: 70px; margin-bottom: 40px">
-<h2>Successfully charged !</h1><br>
+<div class="container" style=" margin-top: 70px; margin-bottom: 40px">
+<h2>Successfully Paid !</h2><br>
 <?php
 $fare = $_SESSION['totalfare'];
 $bus_id = $_SESSION["bus_id"];
@@ -54,15 +54,25 @@ while ($row = mysqli_fetch_assoc($query)) {
     $_SESSION["date"] = $row['date_of_journey'];
 }
 ?>
- <h1>Your Ticket:</h1>
-        <div class="container col-md-6" style="border:solid black 2px; border-radius: 8px;margin: 10px; padding:10px;">
-		<h2>Your Ticket id: <?php echo $_SESSION["ticketid"]; ?><br> From <b><?php echo $_SESSION["source"]; ?></b> <br>To <b><?php echo $_SESSION["destination"]; ?></b>     <br>Fare = <b><?php echo $_SESSION["fare"]; ?></b> per person
-			<br>Arrival time <b><?php echo $_SESSION["arrival_time"]; ?></b>
-			<br>Destination time <b><?php echo $_SESSION["destination_time"]; ?></b>
-            <br>Time of booking <b><?php echo $_SESSION["time"]; ?></b>
-            <br>Date of journey <b><?php echo $_SESSION["date"]; ?></b>
-			<br> <span>Total fare: <b><?php echo $_SESSION['totalfare']; ?></b></span> </h2>
-		</div>
-</div>
+ 
+    <div class = "container col-md-6" style ="background : rgba(117, 177, 169, 0.824); border:solid black 2px; border-radius: 8px;margin: 10px; padding:10px;">
+            <h1 style = "font-size: 35px;"><b>MY TICKET</b> </h1>
+            <h1 style = "font-size: 15px;"><b>*Please capture screen for confirm at staton </b> </h1>
+    </div>
+    <div class="container col-md-6" style="background : rgba(117, 177, 169, 0.824); border:solid black 2px; border-radius: 8px;margin: 10px; padding:10px;">
+        <h1 style = "font-size: 35px;">
+        <b>Ticket id:</b> <?php echo $_SESSION["ticketid"]; ?><br></h1> 
+        <h1 style = "font-size: 35px;">
+        <b>From : </b><?php echo $_SESSION["source"]; ?>
+        <br><b>To : </b><?php echo $_SESSION["destination"]; ?>     
+        <br><b> Price : </b><?php echo $_SESSION["fare"]; ?><b> per person</b>
+        <br><b> Number Passenger : </b><?php echo $_SESSION["number"]; ?>
+		<br><b> Arrival Time : </b><?php echo $_SESSION["arrival_time"]; ?>
+			<br><b>Destination Time : </b><?php echo $_SESSION["destination_time"]; ?>
+            <br><b>Time of booking : </b><?php echo $_SESSION["time"]; ?>
+            <br><b>Date of journey : </b><?php echo $_SESSION["date"]; ?>
+			<br> <span><b>Total Price : </b><?php echo $_SESSION['totalfare']; ?></span> </h1>
+	</div>
+
 <?php include 'includes/footer.php'?>
 <script src="js/bootstrap.min.js" type="text/css"></script>

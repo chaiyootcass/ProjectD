@@ -42,9 +42,9 @@ if (isset($_POST['username'])) {
 
 ?>
 
-	<div class="back_ground_blur"> </div>
-	<div class="container" style="margin-top: 50px; margin-bottom: 40px; height: 500px; opacity: 0.9;">
-		<h1 style="padding-left:100px; ">Booking Bus!!</h1>
+	
+	<div class="container" style="margin-top: 50px; margin-bottom: 40px; height: 500px; opacity: 0.9; background-color: rgba(255, 255, 255, 0.9);">
+		<h1 style="padding-left:100px; "><b>BOOKING</b></h1>
 		<?php
 $min_date = date("Y-m-d");
 $max_date = date('Y-m-d', strtotime($min_date . ' + 29 days'));
@@ -63,7 +63,7 @@ if (isset($_POST['submit'])) {
 
 		<form  style=" " class="form-inline" action="index.php" method="POST">
 		    <div class="form-group">
-		      <label class="control-label col-sm-3" for="source">Source:</label>
+		      <label class="control-label col-sm-3" for="source">BusStation:</label>
 		      <div class="col-sm-10">
               <select name="source" class="form-control" id="source" onChange="document.location.href='index.php?lang=' + this.value">
                 <option <?php if (isset($_POST['submit'])) {echo 'value="' . $source . '"';} else {echo 'value="' . $_SESSION["start"] . '"';}?> > <?php
@@ -111,7 +111,7 @@ while ($objResuut = mysqli_fetch_array($objQuery)) {
 		    </div>
 
 		    <div class="form-group">
-		      <label class="control-label col-sm-3"> Date:</label>
+		      <label class="control-label col-sm-3">Date:</label>
 		      <div class="col-sm-10">
 		        <input type="date" min=<?php echo $min_date; ?> max=<?php echo $max_date; ?> name="date" class="form-control" id="date" placeholder="dd/mm/yyyy"
 		        <?php
@@ -159,16 +159,16 @@ if (isset($_POST['submit'])) {
     } else {
         echo "<h1>Search results:</h1>";
         ?>
-				<div class="table-responsive" style="background-color: rgba(206, 228, 229,0.8);">
+				<div class="table-responsive" style="background-color: rgba(117, 177, 169, 0.824);">
 				    <table class="table table-hover">
 				  		<thead>
 				      	<tr>
-				        	<th>Bus no.</th>
-				        	<th>Arival time</th>
-				        	<th>destination time</th>
-				        	<th>intermediate stops</th>
-				        	<th>available seats</th>
-				        	<th>fare</th>
+				        	<th>Bus No.</th>
+				        	<th>Arival time </th>
+				        	<th>Destination time </th>
+				        	<th>Intermediate Stops </th>
+				        	<th>Available seats </th>
+				        	<th>Price</th>
 				        	<th>Book</th>
 				        </tr>
 				    </thead>
