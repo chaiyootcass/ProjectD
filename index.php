@@ -2,10 +2,10 @@
 session_start();
 
 include 'includes/vars.php';
-
 include 'includes/header.php';
 include 'includes/nav_bar.php';
 include 'includes/conn.php';
+
 $_SESSION["start"] = "Select";
 if (isset($_GET["lang"])) {
     $_SESSION["start"] = $_GET["lang"];
@@ -29,8 +29,6 @@ if (isset($_POST['username'])) {
                 $_SESSION["first_name"] = $row['first_name'];
                 $_SESSION["last_name"] = $row['last_name'];
                 $_SESSION["photo"] = $row['photo'];
-                $_SESSION["ssn"] = $row['ssn'];
-                $_SESSION["bday"] = $row['bday'];
                 $_SESSION["cur_page"] = "index.php";
                 header("Refresh:0");
             }
@@ -42,9 +40,10 @@ if (isset($_POST['username'])) {
 
 ?>
 
-	
-	<div class="container" style="margin-top: 50px; margin-bottom: 40px; height: 500px; opacity: 0.9; background-color: rgba(255, 255, 255, 0.9);">
-		<h1 style="padding-left:100px; "><b>BOOKING</b></h1>
+	<div> </div>
+	<div class="container" style="background-color: rgba(255, 255, 255, 0.9); margin-top: 50px; margin-bottom: 40px; height: 500px; opacity: 0.9;">
+		<br><br>
+        <h1 class="alert-link text-success" style="padding-left:0px;"><b> BOOKING </b></h1>
 		<?php
 $min_date = date("Y-m-d");
 $max_date = date('Y-m-d', strtotime($min_date . ' + 29 days'));
@@ -63,7 +62,7 @@ if (isset($_POST['submit'])) {
 
 		<form  style=" " class="form-inline" action="index.php" method="POST">
 		    <div class="form-group">
-		      <label class="control-label col-sm-3" for="source">BusStation:</label>
+		      <label class="control-label col-sm-3 alert-link text-dark" style="padding-left:50px;" for="source"> <b>BusStation:</b></label>
 		      <div class="col-sm-10">
               <select name="source" class="form-control" id="source" onChange="document.location.href='index.php?lang=' + this.value">
                 <option <?php if (isset($_POST['submit'])) {echo 'value="' . $source . '"';} else {echo 'value="' . $_SESSION["start"] . '"';}?> > <?php
@@ -86,7 +85,7 @@ while ($objResuut = mysqli_fetch_array($objQuery)) {
 		      </div>
 		    </div>
 		    <div class="form-group">
-		      <label class="control-label col-sm-3" for="pwd">Destination:</label>
+		      <label class="control-label col-sm-3 alert-link text-dark" for="pwd"><b>Destination:</b></label>
 		      <div class="col-sm-10">
               <select name="destination" class="form-control" id="destination">
                 <option <?php if (isset($_POST['submit'])) {echo 'value="' . $destination . '"';}?> > <?php
@@ -111,7 +110,7 @@ while ($objResuut = mysqli_fetch_array($objQuery)) {
 		    </div>
 
 		    <div class="form-group">
-		      <label class="control-label col-sm-3">Date:</label>
+		      <label class="control-label col-sm-3 alert-link text-danger">Date:</label>
 		      <div class="col-sm-10">
 		        <input type="date" min=<?php echo $min_date; ?> max=<?php echo $max_date; ?> name="date" class="form-control" id="date" placeholder="dd/mm/yyyy"
 		        <?php
@@ -125,7 +124,7 @@ if (isset($_POST['submit'])) {
 
 		    <div class="form-group">
 		      <div class="col-sm-offset-2 col-sm-10">
-		        <button type="submit" name="submit" class="btn btn-primary">Search</button>
+		        <button type="submit" name="submit" class="btn btn-danger">Search</button>
 		      </div>
 		    </div>
 		</form>
@@ -159,15 +158,15 @@ if (isset($_POST['submit'])) {
     } else {
         echo "<h1>Search results:</h1>";
         ?>
-				<div class="table-responsive" style="background-color: rgba(117, 177, 169, 0.824);">
+				<div class="table-responsive" style="background-color: rgba(206, 228, 229,0.8);">
 				    <table class="table table-hover">
 				  		<thead>
 				      	<tr>
 				        	<th>Bus No.</th>
-				        	<th>Arival time </th>
-				        	<th>Destination time </th>
-				        	<th>Intermediate Stops </th>
-				        	<th>Available seats </th>
+				        	<th>Arival time</th>
+				        	<th>Destination Time</th>
+				        	<th>Intermediate Stops</th>
+				        	<th>Available Seats</th>
 				        	<th>Price</th>
 				        	<th>Book</th>
 				        </tr>

@@ -12,11 +12,11 @@ include 'includes/nav_bar.php';
 
 <form name="form1" style="padding-left: 25%;" action="user.php" method="POST" onsubmit="return required()">
     <div class="form-group">
-        <label >Username :</label>
+        <label class="text-white">Username :</label>
         <br>
         <input type="text" class="form-control" name="username" style="width: 70%;" id="username" placeholder="Enter User id or User name or Email" >
     </div>
-    <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" name="submit" class="btn btn-danger">Submit</button>
 </form>
 <?php
 include 'includes/conn.php';
@@ -25,9 +25,9 @@ if (isset($_POST["submit"])) {
     $query = "SELECT * FROM user WHERE email_id='$id' OR user_name='$id' OR user_id='$id'";
     $res = mysqli_query($connection, $query);
     if (!$res || mysqli_num_rows($res) == 0) {
-        echo "<h1 style=\"color:red;\" >No result found</h1>";
+        echo "<h5 style=\"color:red;\" ><center>No result found!<center></h5>";
     } else {
-        echo "<h1>Search results:</h1>";
+        echo "<5>Search results:</h5>";
         ?>
         <?php
 while ($row = mysqli_fetch_assoc($res)) {

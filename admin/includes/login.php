@@ -26,12 +26,13 @@ if (isset($_POST['username'])) {
 }
 ?>
 
-<div id="id01" class="wrapper">
+<div id="id01" class="container" style="margin-top: 200px; margin-bottom: 40px;">
     <form class="form-signin" action="index.php" method="POST">
-    	<h2 class="form-signin-heading">Admin login</h2>
+    	<h2 class="form-signin-heading"><center><b>ADMIN</b></center></h2>
     	<input type="text" class="form-control" name="username" placeholder="Email Address" required="" autofocus="" />
     	<input type="password" class="form-control" name="password" placeholder="Password" required=""/>
-    	<label class="checkbox">
+
+      <label class="checkbox">
     	<input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
     	</label>
     	<button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
