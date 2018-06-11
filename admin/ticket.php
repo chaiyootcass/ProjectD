@@ -13,7 +13,7 @@ include 'includes/nav_bar.php';
 <form name="form1" style="padding-left: 25%;" action="ticket.php" method="POST" onsubmit="return required()">
     <input type="text" style="display: none;" name="st_num" id="st_num" value="0">
     <div class="form-group">
-        <label class="text-white">Ticket ID:</label>
+        <label class="text-dark"><b>Ticket ID :</b></label>
         <br>
         <input type="text" class="form-control " name="ticket" style=" width: 70%;" id="ticket" placeholder="Ticket number" >
     </div>
@@ -28,9 +28,9 @@ if (isset($_POST['submit'])) {
     if (mysqli_num_rows($res) == 0) {
         echo "<h5 style=\"color:red;\" ><center>No result found!</center></h5>";
     } else {
-        echo "<h5><center>Search results:</center></h5>";
+        echo "<h5 style=\"color:black;\"><center><b>Search results :</b></center></h5>";
         ?>
-<div class="table-responsive" style="background-color: rgba(206, 228, 229,0.8);">
+<div class="table-responsive text-dark" style="background-color: rgba(206, 228, 229,0.8);">
 				    <table class="table table-hover">
 				  		<thead>
 				      	<tr>

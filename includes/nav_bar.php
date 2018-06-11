@@ -16,18 +16,18 @@
 				<li class="nav-item">
 					<a class="nav-link success" href="index.php#"> <b> HOME </b> <span class="sr-only">(current)</span></a>
 				</li>
-		
+
 				<li class="nav-item">
 					<a class="nav-link" href="about.php"> <b> ABOUT </b></a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link"><b>HOW TO</b></a>
+					<a class="nav-link" href="howto.php"><b>HOW TO</b></a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="contact.php"><b>CONTACT</b></a>
 				</li>
 			</ul>
-				
+
 				<ul class="nav navbar-nav navbar-right">
 			    	<?php
 					//$_SESSION["user_name"]="hello";
@@ -45,7 +45,7 @@
 					?>
 				</ul>
 
-								
+
 			</div>
 		</nav>
 
@@ -56,7 +56,7 @@
 					?>
 
 					<script src="js/bootstrap.min.js" type="text/css"></script>
-			
+
 		<!-- </div>
 	</div>
 </div> -->

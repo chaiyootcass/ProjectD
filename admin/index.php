@@ -14,8 +14,8 @@ if ($_SESSION["admin_islogin"] == 0) {
 ?>
 <div class = "container "style="margin-top: 100px; margin-bottom: 40px;>
   	<div class= "row">
-  		<div class = "container container-center col-md-9">
-        <div class="list-group">
+  		<div class = "container container-center col-md-9" >
+        <div class="list-group"  style=" font-size:20px;">
           <a href="bus.php" class="list-group-item d-flex justify-content-between align-items-center ">ADD BUS
             <span class="badge badge-primary badge-pill">✚</span>
           </a>

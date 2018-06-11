@@ -7,7 +7,7 @@ include 'includes/nav_bar.php';
 include 'includes/conn.php';
 //$_SESSION["islogin"]=0;
 ?>
-	<div class="container" style="margin-top: 150px; margin-bottom: 40px">
+	<div class="container" style="margin-top: 100px; margin-bottom: 40px">
 <?php
 if (($_SESSION["islogin"] == 1) && $_POST && isset($_POST['number'])) {
     $number = $_POST["number"];
@@ -32,17 +32,17 @@ if (($_SESSION["islogin"] == 1) && $_POST && isset($_POST['number'])) {
     $result1 = mysqli_query($connection, $query1);*/
     if ($ticket_id == 1) {
         ?>
-        <div class="container col-md-6 card text-white bg-danger" style="margin: 5px; padding:0px;">
+        <div class="container col-md-6 card text-dark" style="background-color: rgba(255, 255, 255, 0.7); margin: 5px; padding:0px;">
 		<div class="card-header">
-        <h1 style = "font-size: 35px;"><b>CONFIRMATION TICKET</b> </h1>
-        <h1 style = "font-size: 15px;" class = "text-dark"><b>*Please check your ticket </b> </h1>
+        <h3 style = "font-size: 35px;"><b>CONFIRMATION TICKET</b> </h3>
+        <h3 style = "font-size: 15px;" class = "text-dark"><b>*Please check your ticket </b> </h3>
     </div>
         <div class="card-body">
         <h1 style = "font-size: 35px;">
         <b>TICKET</b></h1>
         <h1 style = "font-size: 25px;">
-        <b>From : </b><?php echo $_SESSION["source"]; ?></b> 
-        <br><b>To :</b><?php echo $_SESSION["destination"]; ?>     
+        <b>From : </b><?php echo $_SESSION["source"]; ?></b>
+        <br><b>To :</b><?php echo $_SESSION["destination"]; ?>
         <br><b>Price : </b><?php echo $_SESSION["fare"]; ?><b> per person </b>
         <br><b>Number Passenger : </b><?php echo $_SESSION["number"]; ?>
 			<br><b>Arrival Time : </b><?php echo $_SESSION["arrival_time"]; ?>
@@ -55,7 +55,7 @@ require_once './config.php';
         $_SESSION['totalfare'] = $fare;
         ?>
 
-<form action="charge.php" method="post">
+<form style="padding-left: 1%;" action="charge.php" method="post">
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button "
           data-key="<?php echo $stripe['publishable_key']; ?>"
           data-description="Access for a year"

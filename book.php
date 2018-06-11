@@ -72,21 +72,21 @@ if (($_SESSION["islogin"] == 1)) {
     $_SESSION["destination_time"] = $destination_time;
 
     ?>
-   
 
-		<div class="container col-md-6 card text-primary bg-warning" style="margin: 10px; padding:10px;">
+
+		<div class="container col-md-6 card text-dark" style="background-color: rgba(255, 255, 255, 0.7); margin: 10px; padding:10px;">
         <div class="card-header">
-        <h1 style = "font-size: 35px;" class = "text-white"><b>TICKET</b> </h1></div>
-        <div class="card-body">
-        <h1 style = "font-size: 25px;" class = "text-white">
-            <b>From : </b> <?php echo $_SESSION["source"]; ?> 
-            <br><b>To : </b><?php echo $_SESSION["destination"]; ?>    
+        <h3 style = "font-size: 35px;"><b>TICKET</b> </h3></div>
+        <div class="card-body ">
+        <h3 style = "font-size: 25px;" >
+            <b>From : </b> <?php echo $_SESSION["source"]; ?>
+            <br><b>To : </b><?php echo $_SESSION["destination"]; ?>
             <br><b>Price : </b><?php echo $fare; ?><b> per person </b>
 			<br><b>Arrival Time : </b><?php echo $arrival_time; ?>
-			<br><b>Destination Time : </b><?php echo $destination_time; ?></h1>
+			<br><b>Destination Time : </b><?php echo $destination_time; ?></h3>
 </div>
 		</div>
-		<div class="container col-md-6 card text-white bg-danger" style="margin: 10px; padding:10px;">
+		<div class="container col-md-6 card text-dark " style="background-color: rgba(255, 255, 255, 0.7); margin: 10px; padding:10px;">
 
 		<?php
 //$query = "SELECT available_seats FROM bus WHERE   bus_id = $bus_id";
@@ -100,9 +100,9 @@ if (($_SESSION["islogin"] == 1)) {
     $row = mysqli_fetch_assoc($result);
     $max_seat = $row["available_seats"];
     ?>
-        
+
 		<form action="booked.php" method="POST" style="display: inline-block;">
-		<h3 style="display: inline-block;"><b>Number of passengers :</b></h3>
+		<h4 class = "text-dark"style="display: inline-block;"><b>Number of passengers :</b></h4>
 		    <input name="number" style="width: 60px;" data-bind="value: qty()" value="1" type="number" max="<?php echo $max_seat; ?>" min="1"  maxlength="6"/>
 		    <br>
 

@@ -12,8 +12,8 @@ if ($_SESSION["islogin"] == 0) {
     exit();
 }
 ?>
-	<div class="container" style="background-color: rgba(255, 255, 255, 0.8); padding: 15px 15px 25px; margin-top: 70px; margin-bottom: 40px;">
-	
+	<div class="container" style="background-color: rgba(255, 255, 255, 0.8); padding: 15px 15px 30px; margin-top: 70px; margin-bottom: 40px;">
+
 	<div >
 			<h1 style="text-align: center;"><?php echo $_SESSION["user_name"] ?></h1>
 			<img class="profile_photo" src="img/reg.png">
@@ -22,7 +22,7 @@ if ($_SESSION["islogin"] == 0) {
 			<div class="form-group">
 			    <label ><b>Username</b></label>
 			    <br>
-			    <input type="text" class="form-control " style=" width: 70%;" placeholder="username" id="user_name" readonly value="<?php echo $_SESSION["user_name"] ?>">
+			    <input type="text" class="form-control " style=" width: 50%;" placeholder="username" id="user_name" readonly value="<?php echo $_SESSION["user_name"] ?>">
 			</div>
 			<div class="form-group">
 			    <label ><b>Name</b></label>

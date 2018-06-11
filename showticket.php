@@ -7,7 +7,7 @@ include 'includes/nav_bar.php';
 include 'includes/conn.php';
 //$_SESSION["islogin"]=0;
 ?>
-	<div class="container" style="background-color: rgba(255, 255, 255, 0.8); margin-top: 150px; margin-bottom: 40px;">
+	<div class="container" style="background-color: rgba(255, 255, 255, 0.7); margin-top: 100px; margin-bottom: 40px;">
 		<?php
 $cur_date = date("Y-m-d");
 if ($_SESSION["islogin"] == 0) {
@@ -20,7 +20,7 @@ if ($_SESSION["islogin"] == 0) {
     ?>
 
 		<h1 class=" text-success alert-link">Past tickets</h1>
-		<div class="table-responsive">
+		<div class="table-responsive text-dark">
 		    <table class="table table-hover">
 		  		<thead>
 		      	<tr>
@@ -73,7 +73,7 @@ if ($_SESSION["islogin"] == 0) {
     ?>
 		<h1 class="text-info alert-link">Upcomming tickets</h1>
 		<div class="table-responsive">
-		    <table class="table table-hover">
+		    <table class="table table-hover text-dark">
 		  		<thead>
 		      	<tr>
 		        	<th>Ticket id</th>

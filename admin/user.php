@@ -12,7 +12,7 @@ include 'includes/nav_bar.php';
 
 <form name="form1" style="padding-left: 25%;" action="user.php" method="POST" onsubmit="return required()">
     <div class="form-group">
-        <label class="text-white">Username :</label>
+        <label class="text-dark"><b>Username :</b></label>
         <br>
         <input type="text" class="form-control" name="username" style="width: 70%;" id="username" placeholder="Enter User id or User name or Email" >
     </div>
@@ -27,7 +27,7 @@ if (isset($_POST["submit"])) {
     if (!$res || mysqli_num_rows($res) == 0) {
         echo "<h5 style=\"color:red;\" ><center>No result found!<center></h5>";
     } else {
-        echo "<5>Search results:</h5>";
+        echo "<h5>Search results:</h5>";
         ?>
         <?php
 while ($row = mysqli_fetch_assoc($res)) {
@@ -41,33 +41,38 @@ while ($row = mysqli_fetch_assoc($res)) {
             $ssn = $row["ssn"];
             ?>
 
-			<div class="form-group">
-			    <label >Username:</label>
+  <div class="container container-center text-dark alert alert-dismissible alert-light" style=" background-color: rgba(255, 255, 255, 0.7);padding-left: 25% ;margin-top: 40px; ">
+
+			<div class="form-group text-dark">
+			   <label ><b>Username :</b></label>
 			    <br>
 			    <input type="text" class="form-control " style=" width: 70%;" placeholder="username" id="user_name" readonly value="<?php echo $username ?>">
 			</div>
 			<div class="form-group">
-			    <label >Name:</label>
+			    <label ><b>Name :</b></label>
 			    <br>
 			    <input type="text" class="form-control " style="display: inline-block; width: 34%;" id="first_name" placeholder="First name" readonly value="<?php echo $fn ?>">
 			    <input type="text" class="form-control" id="last_name" style="display: inline-block; margin-left: 20px; width: 33%;" placeholder="Last name" readonly value="<?php echo $ln ?>">
 			</div>
 			<div class="form-group">
-			    <label for="exampleInputEmail1">Email :</label>
+			    <label for="exampleInputEmail1"><b>Email :</b></label>
 			    <input type="email" class="form-control" id="email_id" style=" width: 70%;" id="exampleInputEmail1" aria-describedby="emailHelp"  value="<?php echo $email ?>" readonly>
 			</div>
 			<div class="form-group">
-			    <label for="exampleInputEmail1">SSN:</label>
+			    <label for="exampleInputEmail1"><b>SSN :</b></label>
 			    <input type="text" class="form-control" id="ssn" style=" width: 70%;" id="exampleInputEmail1"  value="<?php echo $ssn ?>" readonly>
 			</div>
 			<div class="form-group">
-			    <label for="exampleInputEmail1">Bday:</label>
+			    <label for="exampleInputEmail1"><b>Bday:</b></label>
 			    <input type="text" class="form-control" id="bday" style=" width: 70%;" id="exampleInputEmail1"  value="<?php echo $bday ?>" readonly>
 			</div>
 			<div class="form-group">
-			    <label >Phone number:</label>
+			    <label ><b>Phone number:<b></label>
 			    <input type="text" name="num" id="phone_no" data-validation="number" style=" width: 70%;" data-validation-allowing="negative,number" input name="color" data-validation="number" datavalidation-ignore="$" required="required" class="form-control"  placeholder="Phone Number" maxlength="10" minlength="10" pattern="\d*" readonly value="<?php echo $phone ?>">
 			</div>
+
+
+		</div>
     <?php
 
         }

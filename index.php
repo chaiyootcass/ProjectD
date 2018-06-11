@@ -40,16 +40,16 @@ if (isset($_POST['username'])) {
 
 ?>
 
-<<<<<<< HEAD
 
-	<div class="container" style="margin-top: 50px; margin-bottom: 40px; height: 500px; opacity: 0.9; background-color: rgba(255, 255, 255, 0.9);">
+
+	<!-- <div class="container" style="margin-top: 50px; margin-bottom: 40px; height: 500px; opacity: 0.9; background-color: rgba(255, 255, 255, 0.9);">
 		<h1 style="padding-left:100px; "><b>BOOKING</b></h1>
-=======
-	<div> </div>
+
+	<div> </div> -->
 	<div class="container" style="background-color: rgba(255, 255, 255, 0.9); margin-top: 50px; margin-bottom: 40px; height: 500px; opacity: 0.9;">
 		<br><br>
         <h1 class="alert-link text-success" style="padding-left:0px;"><b> BOOKING </b></h1>
->>>>>>> cf1b4118923c8eb780a0c504a16951cd7da141cb
+
 		<?php
 $min_date = date("Y-m-d");
 $max_date = date('Y-m-d', strtotime($min_date . ' + 29 days'));

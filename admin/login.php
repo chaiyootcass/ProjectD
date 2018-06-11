@@ -36,13 +36,13 @@ if (isset($_POST['username'])) {
 echo "$msg_error";
 ?>
 
-    <form class="form-signin" action="login.php" method="POST">
+    <form class="form-signin"  style="background-color: rgba(255, 255, 255, 0.7); " action="login.php" method="POST">
     	<h2 class="form-signin-heading"><center><b>ADMIN</b></center></h2>
     	<input type="text" class="form-control" name="username" placeholder="Email Address" required="" autofocus="" />
     	<input type="password" class="form-control" name="password" placeholder="Password" required=""/>
       <br>
     	</label>
-    	<button class="btn btn-lg btn-danger btn-block " type="submit">Login</button>
+    	<button class="btn btn-lg btn-dark btn-block " type="submit">Login</button>
 
     </form>
 	</div>

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
+-- version 4.8.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 07, 2018 at 03:57 PM
--- Server version: 10.1.31-MariaDB
--- PHP Version: 7.2.3
+-- Generation Time: Jun 11, 2018 at 07:07 PM
+-- Server version: 10.1.32-MariaDB
+-- PHP Version: 7.2.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -65,8 +65,11 @@ CREATE TABLE `bus` (
 
 INSERT INTO `bus` (`bus_id`, `bus_no`, `intermediate_station`, `driver_name`, `total_seats`, `intermediate_price`, `intermediate_time`, `photo`) VALUES
 (1, 'HR 10 A1234', 'allahabad,kanpur,mathura,alwar', 'good_driver', 30, '0,50,40,50', '06:10 AM,07:10 AM,08:10 AM,09:10 AM', '1.jpeg'),
-(13, 'asdasd', 'aa,bb,cc,dd', '11awd', 30, '0,20,30,10', '10:10 am,10:20 am,10:30 am,10:30 am', 'asdasd'),
-(14, '6', 'vv,xx,yy,zz', 'adawd', 30, '0,20,30,10', '11:11 am,11:30 am,11:40 am,11:40 am', '6');
+(15, '22à¸ºB', 'bangkok,a1,korat', 'Bee', 20, '0,50,105', '4:30 pm,5:00 pm,5:00 pm', '22à¸ºB'),
+(16, '13A2', 'nonthaburi,bangkok,ayuttaya', 'Aomsin', 20, '0,40,130', '10:30 am,11:30 am,11:30 am', '13A2'),
+(17, '79B', 'nonthaburi,pathumthani,korat', 'Aomsin', 20, '0,30,105', '10:30 am,11:00 am,11:00 am', '79B'),
+(18, '80A', 'nonthaburi,chiang mai', 'Kang', 30, '0,450', '5:30 am,5:30 am', '80A'),
+(19, '22à¸ºB', 'pathumthani,phuket', 'Gas', 20, '0,245', '12:00 pm,12:00 pm', '22à¸ºB');
 
 -- --------------------------------------------------------
 
@@ -118,7 +121,10 @@ INSERT INTO `seats` (`bus_id`, `date1`, `available_seats`) VALUES
 (13, '2018-06-07', 30),
 (13, '2018-06-08', 24),
 (14, '2018-06-08', 20),
-(13, '2018-06-09', 28);
+(13, '2018-06-09', 28),
+(14, '2018-06-13', 26),
+(15, '2018-06-13', 16),
+(17, '2018-06-17', 18);
 
 -- --------------------------------------------------------
 
@@ -141,7 +147,15 @@ INSERT INTO `station` (`start_station`, `end_station`) VALUES
 ('aa', 'dd'),
 ('vv', 'xx'),
 ('vv', 'yy'),
-('vv', 'zz');
+('vv', 'zz'),
+('Bangkok', 'A1'),
+('Bangkok', 'Korat'),
+('Nonthaburi', 'Bangkok'),
+('Nonthaburi', 'Ayuttaya'),
+('Nonthaburi', 'Pathumthani'),
+('Nonthaburi', 'Korat'),
+('Nonthaburi', 'Chiang Mai'),
+('Pathumthani', 'Phuket');
 
 -- --------------------------------------------------------
 
@@ -169,8 +183,7 @@ INSERT INTO `ticket` (`ticket_id`, `user_id`, `bus_id`, `source`, `destination`,
 (51, 41, 13, 'aa', 'dd', 240, '2018-06-07 03:15:54pm GMT', 4, '2018-06-08'),
 (52, 41, 13, 'aa', 'cc', 100, '2018-06-07 03:42:49pm GMT', 2, '2018-06-09'),
 (53, 41, 13, 'aa', 'dd', 120, '2018-06-07 03:46:48pm GMT', 2, '2018-06-08'),
-(54, 41, 14, 'vv', 'zz', 240, '2018-06-07 03:52:44pm GMT', 4, '2018-06-08'),
-(55, 41, 14, 'vv', 'zz', 360, '2018-06-07 03:54:52pm GMT', 6, '2018-06-08');
+(58, 44, 17, 'nonthaburi', 'korat', 270, '2018-06-11 07:05:06pm GMT', 2, '2018-06-17');
 
 -- --------------------------------------------------------
 
@@ -198,7 +211,8 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`user_id`, `email_id`, `password`, `phone_no`, `first_name`, `last_name`, `user_name`, `photo`, `ssn`, `bday`) VALUES
 (9, 'hello', 'hello', 7895153153, 'hello', 'hello', 'hello', 'hello.jpeg', 0, '0000-00-00'),
 (41, 'aa@aa.a', '123456', 313123131, 'asdasd', 'qwdqwd', 'gggg', 'gggg.jpeg', 0, '0000-00-00'),
-(42, 'gg@gg.g', '123456', 916081055, 'gas', 'gggga', 'gas', 'gas.jpeg', 0, '0000-00-00');
+(42, 'gg@gg.g', '123456', 916081055, 'gas', 'gggga', 'gas', 'gas.jpeg', 0, '0000-00-00'),
+(44, 'natchakorn@hotmail.com', '123456', 957777777, 'natchakorn', 'tirakul', 'natchakorn', 'natchakorn.jpeg', 2147483647, '1997-12-11');
 
 --
 -- Indexes for dumped tables
@@ -242,19 +256,19 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `bus`
 --
 ALTER TABLE `bus`
-  MODIFY `bus_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `bus_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `ticket`
 --
 ALTER TABLE `ticket`
-  MODIFY `ticket_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `ticket_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
