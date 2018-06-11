@@ -42,7 +42,7 @@ if (isset($_POST['username'])) {
 
 ?>
 
-	
+
 	<div class="container" style="margin-top: 50px; margin-bottom: 40px; height: 500px; opacity: 0.9; background-color: rgba(255, 255, 255, 0.9);">
 		<h1 style="padding-left:100px; "><b>BOOKING</b></h1>
 		<?php
@@ -111,7 +111,7 @@ while ($objResuut = mysqli_fetch_array($objQuery)) {
 		    </div>
 
 		    <div class="form-group">
-		      <label class="control-label col-sm-3">Date:</label>
+		      <label class="control-label col-sm-3" >Date:</label>
 		      <div class="col-sm-10">
 		        <input type="date" min=<?php echo $min_date; ?> max=<?php echo $max_date; ?> name="date" class="form-control" id="date" placeholder="dd/mm/yyyy"
 		        <?php

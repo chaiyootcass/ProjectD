@@ -10,6 +10,7 @@ function logout() {
 
         }
     });
+    location.reload();
 }
 
 function update_profile() {

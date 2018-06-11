@@ -94,7 +94,7 @@ if (isset($_POST["submit"])) {
     }
 
     if ($fl == 0) {
-        $query = "INSERT INTO user (user_id,email_id, password, phone_no, first_name, last_name, user_name, photo) VALUES (NULL,'$email_id','$password',$phone_no,'$first_name','$last_name','$user_name','$photo')";
+        $query = "INSERT INTO user (user_id,email_id, password, phone_no, first_name, last_name, user_name, photo, ssn, bday) VALUES (NULL,'$email_id','$password',$phone_no,'$first_name','$last_name','$user_name','$photo','$ssn','$bday')";
 
         $connection = mysqli_connect("localhost", 'root', '', 'mybus');
         if (!$connection) {
