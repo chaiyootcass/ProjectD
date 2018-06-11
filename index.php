@@ -116,11 +116,7 @@ while ($objResuut = mysqli_fetch_array($objQuery)) {
 		    </div>
 
 		    <div class="form-group">
-<<<<<<< HEAD
 		      <label class="control-label col-sm-3" >Date:</label>
-=======
-		      <label class="control-label col-sm-3 alert-link text-danger">Date:</label>
->>>>>>> cf1b4118923c8eb780a0c504a16951cd7da141cb
 		      <div class="col-sm-10">
 		        <input type="date" min=<?php echo $min_date; ?> max=<?php echo $max_date; ?> name="date" class="form-control" id="date" placeholder="dd/mm/yyyy"
 		        <?php
