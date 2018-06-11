@@ -7,7 +7,11 @@ include 'includes/nav_bar.php';
 include 'includes/conn.php';
 //$_SESSION["admin_islogin"]=0;
 ?>
-
+<style>
+label{
+	color:white;
+}
+</style>
 	<div class="container" style="margin-top: 70px; margin-bottom: 40px;">
 
 		<form name="form1" style="padding-left: 25%;" action="add_bus.php" method="POST" onsubmit="return required()">
