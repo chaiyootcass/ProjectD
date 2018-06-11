@@ -1,6 +1,11 @@
 @import "bourbon";
 body {
-	background:url(../admin/img/bg1.jpg)no-repeat center center fixed; 
+
+	background:url(../admin/img/bg3.jpeg)no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	background-size: cover;
+	width:100vw;
+	height: 100vh;
 }
 
 .wrapper {

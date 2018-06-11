@@ -30,20 +30,23 @@ if (isset($_POST['username'])) {
 }
 
 ?>
-	<div class="container" style="margin-top: 70px; margin-bottom: 40px;">
+
+	<div class="container " style="margin-top: 100px; margin-bottom: 40px;">
     <?php
 echo "$msg_error";
 ?>
+
     <form class="form-signin" action="login.php" method="POST">
-    	<h2 class="form-signin-heading">Admin login</h2>
+    	<h2 class="form-signin-heading"><center><b>ADMIN</b></center></h2>
     	<input type="text" class="form-control" name="username" placeholder="Email Address" required="" autofocus="" />
     	<input type="password" class="form-control" name="password" placeholder="Password" required=""/>
-
+      <br>
     	</label>
-    	<button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+    	<button class="btn btn-lg btn-danger btn-block " type="submit">Login</button>
 
     </form>
 	</div>
+
 <?php include 'includes/footer.php'?>
 
 

@@ -5,9 +5,8 @@ include 'includes/nav_bar.php';
 include 'includes/conn.php';
 $msg_error = "";
 //$_SESSION["islogin"]=0;
-
 ?>
-	<div class="container" style="margin-top: 70px; margin-bottom: 40px;">
+	<div class="container" style="margin-top: 200px; margin-bottom: 40px;">
     <?php
 echo "$msg_error";
 ?>
@@ -18,7 +17,7 @@ echo "$msg_error";
     	<label class="checkbox">
     	<input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
     	</label>
-    	<button class="btn btn-lg btn-primary btn-block" type="submit"><b>LOGIN</b></button>
+    	<button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
 
     </form>
 
@@ -31,8 +30,4 @@ echo "$msg_error";
 
 	</div>
 <?php include 'includes/footer.php'?>
-
-
-
-
 <script src="js/bootstrap.min.js" type="text/css"></script>

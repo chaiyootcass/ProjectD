@@ -6,10 +6,11 @@
 	<meta name="viewport" content = "width=device-width, initial-scal = 1">
 
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-	<!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> -->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="login.css" >
 	<link rel="stylesheet" type="text/css" href="footer.css" >
 	<link rel="stylesheet" type="text/css" href="style.css" >
+	
 
 	<script src="js/jquery.min.js"></script>
 	<script src="js/jquery.js"></script>

@@ -7,7 +7,7 @@ include 'includes/nav_bar.php';
 include 'includes/conn.php';
 //$_SESSION["islogin"]=0;
 ?>
-	<div class="container" style="margin-top: 70px; margin-bottom: 40px">
+	<div class="container" style="margin-top: 150px; margin-bottom: 40px">
 <?php
 if (($_SESSION["islogin"] == 1) && $_POST && isset($_POST['number'])) {
     $number = $_POST["number"];
@@ -32,11 +32,12 @@ if (($_SESSION["islogin"] == 1) && $_POST && isset($_POST['number'])) {
     $result1 = mysqli_query($connection, $query1);*/
     if ($ticket_id == 1) {
         ?>
-        <div class="container col-md-6" style="background : rgba(117, 177, 169, 0.824); border:solid black 2px; border-radius: 8px;margin: 10px; padding:10px;">
+        <div class="container col-md-6 card text-white bg-danger" style="margin: 5px; padding:0px;">
+		<div class="card-header">
         <h1 style = "font-size: 35px;"><b>CONFIRMATION TICKET</b> </h1>
-        <h1 style = "font-size: 15px;"><b>*Please check your ticket </b> </h1>
+        <h1 style = "font-size: 15px;" class = "text-dark"><b>*Please check your ticket </b> </h1>
     </div>
-        <div class="container col-md-6" style="background : rgba(117, 177, 169, 0.824); border:solid black 2px; border-radius: 8px;margin: 10px; padding:10px;">
+        <div class="card-body">
         <h1 style = "font-size: 35px;">
         <b>TICKET</b></h1>
         <h1 style = "font-size: 25px;">
@@ -48,13 +49,14 @@ if (($_SESSION["islogin"] == 1) && $_POST && isset($_POST['number'])) {
 			<br><b>Destination Time: </b><?php echo $_SESSION["destination_time"]; ?>
 			<br> <span><b>Total Price : </b><?php echo $fare; ?></span> </h1>
 		</div>
+        </div>
 		<?php
 require_once './config.php';
         $_SESSION['totalfare'] = $fare;
         ?>
 
 <form action="charge.php" method="post">
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button "
           data-key="<?php echo $stripe['publishable_key']; ?>"
           data-description="Access for a year"
           data-amount=$_SESSION['totalfare']

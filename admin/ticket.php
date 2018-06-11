@@ -13,11 +13,11 @@ include 'includes/nav_bar.php';
 <form name="form1" style="padding-left: 25%;" action="ticket.php" method="POST" onsubmit="return required()">
     <input type="text" style="display: none;" name="st_num" id="st_num" value="0">
     <div class="form-group">
-        <label >Ticket ID:</label>
+        <label class="text-white">Ticket ID:</label>
         <br>
         <input type="text" class="form-control " name="ticket" style=" width: 70%;" id="ticket" placeholder="Ticket number" >
     </div>
-    <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" name="submit" class="btn btn-danger">Submit</button>
 </form>
 <?php
 include 'includes/conn.php';
@@ -26,9 +26,9 @@ if (isset($_POST['submit'])) {
     $query = "SELECT * FROM ticket,user WHERE ticket.ticket_id=$id and user.user_id=ticket.user_id";
     $res = mysqli_query($connection, $query);
     if (mysqli_num_rows($res) == 0) {
-        echo "<h1 style=\"color:red;\" >No result found</h1>";
+        echo "<h5 style=\"color:red;\" ><center>No result found!</center></h5>";
     } else {
-        echo "<h1>Search results:</h1>";
+        echo "<h5><center>Search results:</center></h5>";
         ?>
 <div class="table-responsive" style="background-color: rgba(206, 228, 229,0.8);">
 				    <table class="table table-hover">
@@ -42,7 +42,7 @@ if (isset($_POST['submit'])) {
 				        	<th>price</th>
 				        	<th>time_of_booking</th>
 				        	<th>Number of passenger</th>
-                            <th>Date of journey</th>
+                  <th>Date of journey</th>
 				        </tr>
 				    </thead>
         <?php
@@ -76,4 +76,3 @@ while ($row = mysqli_fetch_assoc($res)) {
 }
 ?>
 <?php include 'includes/footer.php'?>
-

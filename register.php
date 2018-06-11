@@ -85,12 +85,8 @@ if (isset($_POST["submit"])) {
         $fl = 1;
     }
     if ($fl == 0) {
-<<<<<<< HEAD
         $query = "INSERT INTO user (user_id,email_id, password, phone_no, first_name, last_name, user_name, photo, ssn, bday) VALUES (NULL,'$email_id','$password',$phone_no,'$first_name','$last_name','$user_name','$photo','$ssn','$bday')";
 
-=======
-        $query = "INSERT INTO user (user_id,email_id, password, phone_no, first_name, last_name, user_name, photo) VALUES (NULL,'$email_id','$password',$phone_no,'$first_name','$last_name','$user_name','$photo')";
->>>>>>> cf1b4118923c8eb780a0c504a16951cd7da141cb
         $connection = mysqli_connect("localhost", 'root', '', 'mybus');
         if (!$connection) {
             die("Unable to connect" . mysqli_error($connection));

@@ -7,7 +7,7 @@ include 'includes/nav_bar.php';
 include 'includes/conn.php';
 //$_SESSION["islogin"]=0;
 ?>
-	<div class="container" style="margin-top: 70px; margin-bottom: 40px;">
+	<div class="container" style="background-color: rgba(255, 255, 255, 0.8); margin-top: 150px; margin-bottom: 40px;">
 		<?php
 $cur_date = date("Y-m-d");
 if ($_SESSION["islogin"] == 0) {
@@ -19,7 +19,7 @@ if ($_SESSION["islogin"] == 0) {
 
     ?>
 
-		<h1>Past tickets</h1>
+		<h1 class=" text-success alert-link">Past tickets</h1>
 		<div class="table-responsive">
 		    <table class="table table-hover">
 		  		<thead>
@@ -71,7 +71,7 @@ if ($_SESSION["islogin"] == 0) {
 
     $res = mysqli_query($connection, $query);
     ?>
-		<h1>Upcomming tickets</h1>
+		<h1 class="text-info alert-link">Upcomming tickets</h1>
 		<div class="table-responsive">
 		    <table class="table table-hover">
 		  		<thead>
@@ -104,7 +104,7 @@ while ($row = mysqli_fetch_assoc($res)) {
 				<td><?php echo $row["date_of_journey"]; ?></td>
 				<td><?php echo $row["time_of_booking"]; ?></td>
 				<td><?php echo $row["no_of_passenger"]; ?></td>
-				<td><a href="cancel.php?ticket_id=<?php echo $ticket_id; ?>">Cancel</a></td>
+				<td><a class="nav-link text-danger" href="cancel.php?ticket_id=<?php echo $ticket_id; ?>">Cancel</a></td>
 			</tr>
 				<?php
 }

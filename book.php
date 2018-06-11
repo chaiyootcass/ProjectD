@@ -7,7 +7,7 @@ include 'includes/nav_bar.php';
 include 'includes/conn.php';
 //$_SESSION["islogin"]=0;
 ?>
-	<div class="container" style="margin-top: 70px; margin-bottom: 40px">
+	<div class="container " style="margin-top: 100px; margin-bottom: 40px">
 		<?php
 if (($_SESSION["islogin"] == 1)) {
 
@@ -72,18 +72,21 @@ if (($_SESSION["islogin"] == 1)) {
     $_SESSION["destination_time"] = $destination_time;
 
     ?>
+   
 
-		<div class="container col-md-6" style="background : rgba(117, 177, 169, 0.824); border:solid black 2px; border-radius: 8px;margin: 10px; padding:10px;">
-        <h1 style = "font-size: 35px;"><b>TICKET</b> </h1>
-        <h1 style = "font-size: 25px;">
+		<div class="container col-md-6 card text-primary bg-warning" style="margin: 10px; padding:10px;">
+        <div class="card-header">
+        <h1 style = "font-size: 35px;" class = "text-white"><b>TICKET</b> </h1></div>
+        <div class="card-body">
+        <h1 style = "font-size: 25px;" class = "text-white">
             <b>From : </b> <?php echo $_SESSION["source"]; ?> 
             <br><b>To : </b><?php echo $_SESSION["destination"]; ?>    
             <br><b>Price : </b><?php echo $fare; ?><b> per person </b>
 			<br><b>Arrival Time : </b><?php echo $arrival_time; ?>
 			<br><b>Destination Time : </b><?php echo $destination_time; ?></h1>
-        
-        </div>
-		<div class="container col-md-5" style=" background : rgba(117, 177, 169, 0.824);border:solid black 2px; border-radius: 8px; margin:10px; padding:10px;">
+</div>
+		</div>
+		<div class="container col-md-6 card text-white bg-danger" style="margin: 10px; padding:10px;">
 
 		<?php
 //$query = "SELECT available_seats FROM bus WHERE   bus_id = $bus_id";
@@ -97,12 +100,13 @@ if (($_SESSION["islogin"] == 1)) {
     $row = mysqli_fetch_assoc($result);
     $max_seat = $row["available_seats"];
     ?>
-
+        
 		<form action="booked.php" method="POST" style="display: inline-block;">
-		<h3 style="display: inline-block;"><b>Number of Passengers :</b></h3>
+		<h3 style="display: inline-block;"><b>Number of passengers :</b></h3>
 		    <input name="number" style="width: 60px;" data-bind="value: qty()" value="1" type="number" max="<?php echo $max_seat; ?>" min="1"  maxlength="6"/>
 		    <br>
-		    <button  class="btn btn-lg btn-primary " name="submit" value="submit" ><b>ENTER</b></button>
+
+		    <button  class="btn btn-lg btn-primary " name="submit" value="submit" > <b>GO </b></button>
 		</form>
 		<?php
 } else {
