@@ -31,8 +31,8 @@ if (isset($_POST["submit"])) {
     $res = mysqli_query($connection, $query);
     $uf = 0;
     $fl = 0;
-    $rowcount = mysqli_num_rows($res);
-    if ($rowcount > 0) {
+
+    if (!$res || mysqli_num_rows($res) > 0) {
         $uf = 1;
         $fl = 1;
     }
@@ -44,8 +44,8 @@ if (isset($_POST["submit"])) {
     }
     $res = mysqli_query($connection, $query);
     $ef = 0;
-    $rowcount = mysqli_num_rows($res);
-    if ($rowcount > 0) {
+
+    if (!$res || mysqli_num_rows($res) > 0) {
         $ef = 1;
         $fl = 1;
     }
@@ -57,8 +57,8 @@ if (isset($_POST["submit"])) {
     }
     $res = mysqli_query($connection, $query);
     $pf = 0;
-    $rowcount = mysqli_num_rows($res);
-    if ($rowcount > 0) {
+
+    if (!$res || mysqli_num_rows($res) > 0) {
         $pf = 1;
         $fl = 1;
     }
@@ -70,8 +70,8 @@ if (isset($_POST["submit"])) {
     }
     $res = mysqli_query($connection, $query);
     $ssnf = 0;
-    $rowcount = mysqli_num_rows($res);
-    if ($rowcount > 0) {
+
+    if (!$res || mysqli_num_rows($res) > 0) {
         $ssnf = 1;
         $fl = 1;
     }
@@ -139,10 +139,9 @@ echo $first_name . " " . $last_name;
 		<div class="form-group">
 		    <label for="exampleInputEmail1"><b>Email address</b></label>
 		    <input type="email" class="form-control" id="email_id" style=" width: 70%;" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="email_id" value="<?php echo $email_id; ?>">
-		    <small id="emailHelp" class="form-text text-muted " >We'll never share your email with anyone else.</small>
 		    <?php
 if ($ef == 1) {?>
-		    <small class="form-text text-muted text-danger" >ex. aaaa@aaaa.aa</small>
+		    <small class="form-text text-muted text-danger" >Email associated with another account</small>
 		    <?php }?>
 		</div>
 		<div class="form-group">
